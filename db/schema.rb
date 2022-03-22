@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_22_151617) do
+ActiveRecord::Schema.define(version: 2022_03_22_170951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2022_03_22_151617) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "type_id", null: false
+    t.bigint "race_id", null: false
+    t.index ["race_id"], name: "index_pets_on_race_id"
     t.index ["type_id"], name: "index_pets_on_type_id"
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
@@ -92,6 +94,7 @@ ActiveRecord::Schema.define(version: 2022_03_22_151617) do
   end
 
   add_foreign_key "alerts", "races"
+  add_foreign_key "pets", "races"
   add_foreign_key "pets", "types"
   add_foreign_key "pets", "users"
   add_foreign_key "races", "types"
