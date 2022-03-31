@@ -1,8 +1,37 @@
-<h1>la page index</h1>
-<% @pets.each do |pet|%>
-  <div>
-    <%= pet.name%>
-    <%= pet.age%>
-    <%= pet.content%>
-  </div>
-<%end%>
+<h1 class ="title">vos pets</h1>
+<%i = 1%>
+
+<div class ="d-flex flex-wrap">
+  <% @pets.each do |pet|%>
+    <div>
+      <div class="pet-card m-2 d-flex flex-column">
+
+        <div class ="d-flex flex-row">
+
+          <!--img du pet-->
+          <% type = pet.type.name %>
+          <% if i <= @pets.count%>
+            <%= image_tag("/img/#{type}#{i}.jpg", class: "img-pet", alt: "un joli #{type}") %>
+            <%i += 1%>
+          <%else%>
+            <%i = 1%>
+            <%= image_tag("/img/chien#{i}.jpg", class: "img-pet", alt: "un joli #{type}") %>
+          <%end%>
+
+          <!--caracte principal-->
+          <div class="m-2 d-flex flex-column flex-grow">
+            <strong class="title"><%= pet.name%></strong>
+            <%= pet.age%>
+          </div>
+        </div>
+
+        <p class="m-2"><%= pet.content%></p>
+      </div>
+
+      <div class="pet-card-health m-2 d-flex flex-row justify-content-between">
+        <strong><p>carnet de santé</p></strong>
+        <i class="fas fa-angle-down pt-1"></i>
+      </div>
+    </div>
+  <%end%>
+</div>

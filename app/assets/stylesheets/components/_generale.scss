@@ -1,7 +1,12 @@
 .margin {
   margin: auto;
 }
+
 .center {
   margin-left: 50%;
   transform: translateX(-50%);
+}
+
+.flex-grow {
+  flex-grow: 2;
 }

@@ -1,0 +1,23 @@
+.pet-card {
+  border: 1px solid grey;
+  background-color: white;
+  width: 25em;
+  height: 18em;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px 2px gray;
+}
+
+.img-pet {
+  width: 75%;
+  height: inherit;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 20px;
+}
+
+.pet-card-health {
+  border: 1px solid grey;
+  background-color: white;
+  width: 25em;
+  border-radius: 10px;
+  padding: 10px 10px 0 10px;
+}
