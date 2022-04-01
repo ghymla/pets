@@ -2,6 +2,14 @@
   margin: auto;
 }
 
+.ml-2 {
+  margin-left: ($spacer * .5) !important;
+}
+
+.mr-2 {
+  margin-right: ($spacer * .5) !important;
+}
+
 .center {
   margin-left: 50%;
   transform: translateX(-50%);

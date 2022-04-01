@@ -1,36 +1,52 @@
 <h1 class ="title">vos pets</h1>
 <%i = 1%>
 
-<div class ="d-flex flex-wrap">
+<div class ="pet-cards d-flex flex-wrap">
   <% @pets.each do |pet|%>
+
     <div>
+
       <div class="pet-card m-2 d-flex flex-column">
 
-        <div class ="d-flex flex-row">
+        <!--img du pet-->
+        <% type = pet.type.name %>
+        <% if i <= @pets.count%>
+          <%= image_tag("/img/#{type}#{i}.jpg", class: "img-pet", alt: "un joli #{type}") %>
+          <%i += 1%>
+        <%else%>
+          <%i = 1%>
+          <%= image_tag("/img/chien#{i}.jpg", class: "img-pet", alt: "un joli #{type}") %>
+        <%end%>
 
-          <!--img du pet-->
-          <% type = pet.type.name %>
-          <% if i <= @pets.count%>
-            <%= image_tag("/img/#{type}#{i}.jpg", class: "img-pet", alt: "un joli #{type}") %>
-            <%i += 1%>
-          <%else%>
-            <%i = 1%>
-            <%= image_tag("/img/chien#{i}.jpg", class: "img-pet", alt: "un joli #{type}") %>
-          <%end%>
+        <!--caracte principal-->
+        <strong class="mt-2 title"><%= pet.name%></strong>
 
-          <!--caracte principal-->
-          <div class="m-2 d-flex flex-column flex-grow">
-            <strong class="title"><%= pet.name%></strong>
-            <%= pet.age%>
-          </div>
+        <div class="cellule-caract-principal ml-2 mr-2 d-flex flex-row justify-content-between">
+          <p class="cellule-race"><%= pet.race.name%></p>
+          <p><%= pet.age %><% if pet.age > 1 %> ans<%else%> an<%end%></p>
         </div>
 
-        <p class="m-2"><%= pet.content%></p>
+        <p class="ml-2"><%= pet.content%></p>
       </div>
 
-      <div class="pet-card-health m-2 d-flex flex-row justify-content-between">
-        <strong><p>carnet de santé</p></strong>
-        <i class="fas fa-angle-down pt-1"></i>
+
+      <!--carnet de santer du pet-->
+      <div class="pet-card-health m-2" data-controller="health-pet">
+
+        <div class="d-flex flex-row justify-content-between">
+          <strong><p>carnet de santé</p></strong>
+          <i class="fas fa-angle-down pt-1" data-action="click->health-pet#display" data-health-pet-target="button"></i>
+        </div>
+
+
+        <div class="p-2 d-none" data-health-pet-target="health">
+          <p class="celule-health">vaccins</p>
+          <p class="celule-health">dernière visite véto</p>
+          <p class="celule-health">alérgies</p>
+          <p class="celule-health">régime spécial</p>
+          <p >maladie connue</p>
+        </div>
+
       </div>
     </div>
   <%end%>

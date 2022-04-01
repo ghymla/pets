@@ -1,23 +1,46 @@
+.pet-cards {
+  margin-left: 5px;
+}
+
 .pet-card {
   border: 1px solid grey;
-  background-color: white;
-  width: 25em;
-  height: 18em;
+  color: $light-gray;
+  background-color: $secondary-color;
+  width: 21em;
+  // height: 22em;
   border-radius: 10px;
   box-shadow: 1px 1px 2px 2px gray;
 }
 
 .img-pet {
-  width: 75%;
-  height: inherit;
+  width: 100%;
+  height: initial;
   border-top-left-radius: 10px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 40px;
+}
+
+.cellule-caract-principal {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(210, 215, 211, 0.6);
+}
+
+.cellule-race {
+  width: 50%;
+  border-right: 1px solid white;
+
 }
 
 .pet-card-health {
   border: 1px solid grey;
   background-color: white;
-  width: 25em;
+  width: 21em;
   border-radius: 10px;
   padding: 10px 10px 0 10px;
+}
+
+.celule-health {
+  border-bottom: 1px solid rgba(210, 215, 211, 0.6);
+  padding-bottom: 5px;
 }
