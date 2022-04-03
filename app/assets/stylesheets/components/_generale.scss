@@ -18,3 +18,13 @@
 .flex-grow {
   flex-grow: 2;
 }
+
+.btn-primary {
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+}
+
+.btn-primary:hover {
+  background-color: $secondary-color-hover;
+  border-color: $secondary-color-hover;
+}
