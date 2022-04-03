@@ -2,6 +2,7 @@ User.destroy_all
 Type.destroy_all
 Race.destroy_all
 Pet.destroy_all
+Chatroom.destroy_all
 
 i = 1
 puts "creating users ..."
@@ -168,3 +169,12 @@ pet = Pet.new(
 )
 pet.save!
 puts "pet #{i} create !"
+
+
+i = 1
+puts "creating chatrooms"
+chatroom = Chatroom.new(
+  name: "general"
+)
+chatroom.save!
+puts "chatroom #{i} create !"

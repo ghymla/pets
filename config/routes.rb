@@ -8,6 +8,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
+
+  #scope module: :chatrooms do
+  #  resources :messages, only: :create
+  #end
+
   resources :pets, only: %i[destroy]
   resources :vetos, only: %i[index]
 end
