@@ -53,7 +53,7 @@
   <%end%>
 
   <!-- chatroom -->
-  <div>
-    <%= render "components/pets/chatroom", chatroom: @chatroom%>
+  <div class="container-chatroom flex-grow">
+    <%= render "components/pets/chatroom", chatroom: @chatroom, message: @message%>
   </div>
 </div>
